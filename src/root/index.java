@@ -51,8 +51,6 @@ public class index extends HttpServlet {
 			response.addHeader("Content-Length", xbyte.length + "");
 			response.getOutputStream().write(xbyte);
 			response.flushBuffer();
-			xtool.x响应信息(response);
-			xtool.x请求信息(request);
 			
 		} else {
 			switch (xParameter.nextElement()) {
