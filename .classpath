@@ -9,7 +9,8 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/lenovo/Desktop/解压/apache-tomcat-9.0.22/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lenovo/Desktop/解压/apache-tomcat-9.0.22/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
