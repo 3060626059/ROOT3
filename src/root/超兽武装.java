@@ -19,7 +19,7 @@ import root.tool.dowloadS;
  *
  *@WebServlet("/超兽武装")
  **/
-@WebServlet(name = "超兽武装" ,urlPatterns = {"/超兽武装","/cswz"})
+@WebServlet(name = "超兽武装" ,urlPatterns = {"/超兽武装","/cswz","CSWZ"})
 public class 超兽武装 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
