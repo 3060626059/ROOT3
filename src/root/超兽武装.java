@@ -19,7 +19,7 @@ import root.tool.dowloadS;
  *
  *@WebServlet("/超兽武装")
  **/
-@WebServlet(name = "超兽武装" ,urlPatterns = {"/超兽武装","/cswz","CSWZ"})
+@WebServlet(name = "超兽武装" ,urlPatterns = {"/超兽武装","/cswz"})
 public class 超兽武装 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,6 +32,8 @@ public class 超兽武装 extends HttpServlet {
 		
 		Enumeration<String> x_Parameter = request.getParameterNames();
 		boolean x_参数_exists = x_Parameter.hasMoreElements();
+		// true 是视频请求
+		// false 是网页请求
 		if (x_参数_exists) {
 			// x0 = 视频请求
 			// x3 = 网页请求

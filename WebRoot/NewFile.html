@@ -1,54 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<title> eclipse 19 06 文件下载站 </title>
-	</head>
+</head>
+
 <body>
+	
+	<br>
+	<a>新下载区域 </a>
+	<br>
+	<span>
+		<div id="listS"></div>
+		<!--异步请求数据,填充进上面的div-->
+		<script>
+			var xrequest = null;
+			if (window.XMLHttpRequest) {
+				xrequest = new XMLHttpRequest();
+			} else {
+				xrequest = new ActiveXObject('Mcrosoft.XMLHTTP');
+			}
+			xrequest.open("get", "./dowload?xValuse=0", true);
+			xrequest.onreadystatechange = function () {
+				var data = xrequest.responseText;
+				var listS = document.getElementById("listS");
+				listS.innerHTML = data;
+			}
+			xrequest.send(null);
+		</script>
+	</span>
 
-	
-	<a>2019-07-24</a>
-<!--	<br>		<video controls autoplay="true">
-		<source src="?x0=" type="video/mp4">
-		</video>
-
-	<br>
--->
-	<br>		
-	<video controls autoplay="true">
-		<source src="?x0=" type="video/mp4">
-		</video>
-
-	<br>
-	<br>
-	<br>
-	<a>tomcat 处理文件名: 项目内文件</a>
-	<br>
-	
-	<a href="src/青青子衿copy.pdf" download="青青子衿copy.pdf">青青子衿copy.pdf</a>
-	<br>
-	<a href="src/tokenl会.exe" >tokenl.exe</a>
-	<br>
-	<a href="src/tokenl会.exe" >tokenl 测试2</a>
-	<br>
-	<br>
-	<a>2019年8月1日 23:32:26</a>
-	<br>
-	<a> 项目外文件 文件下载2.0</a>
-	<br>
-	<a href="?x2=">超兽武装  测试  下载</a>
-	
-	<br>
-	<a href="?x4=AIDE1117_3.2.180516.apk" download="AIDE1117_3.2.180516.apk">AIDE</a>
-	<br>
-	<br>
-	<a href="?x4=AIDE_3.2.161018.apk" download="AIDE_3.2.161018.apk">AIDE_3.2.161018.apk</a>
-	<br>
-	<a>测试集成下载类</a>
-	<br>
-	<a href="./dowload" >icons</a>
-	<br>
-	<a href="./dowload" >王者荣耀__精简版</a>
-	
 </body>
+
 </html>

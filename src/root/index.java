@@ -2,7 +2,6 @@ package root;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import root.root.Range;
 import root.tool.dowloadS;
 import root.tool.xtool;
 
@@ -21,15 +19,8 @@ import root.tool.xtool;
 @WebServlet("/in")
 // 访问路径设置成 / 则无法访问静态资源
 public class index extends HttpServlet {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
-	/**
-	 * Full range marker.
-	 */
-	protected static final ArrayList<Range> FULL = new ArrayList<>();
-	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	                throws ServletException, IOException {

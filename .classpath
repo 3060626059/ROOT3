@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="lib/commons-fileupload-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/tomcat-api.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.2.56.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
