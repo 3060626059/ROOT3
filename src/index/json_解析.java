@@ -68,8 +68,8 @@ public class json_解析 {
 	}
 	
 	public static void main(String[] args) {
-		json_解析 x=new json_解析();
-		json_解析 x2=new json_解析(0);
+		// json_解析 x=new json_解析();
+		// json_解析 x2=new json_解析(0);
 	}
 	
 }
