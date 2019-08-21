@@ -15,8 +15,10 @@ import root.tool.xtool;
 
 /**
  * Servlet implementation class index
+ * 问题 不知道如何解决 / 路径下没办法读取 js ,css 文件
+ * 但是 tomcat 404 却能加载 js , css 文件
  */
-@WebServlet(name = "index",urlPatterns = {"/in","/index"})
+@WebServlet(name = "index",urlPatterns = {"/","/in","/index"})
 // 访问路径设置成 / 则无法访问静态资源
 public class index extends HttpServlet {
 
