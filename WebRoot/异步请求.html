@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ajax实例</title>
+</head>
+
+<body>
+
+	<div id="d">测试数据 已更新</div>
+	<input type="button" value="点击" id="btn">
+
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var btn = document.getElementById('btn');
+			btn.onclick = function () {
+				var xhr = null;
+				if (window.XMLHttpRequest) {
+					xhr = new XMLHttpRequest();
+				} else {
+					xhr = new ActiveXObject('Mcrosoft.XMLHTTP');
+				}
+				xhr.open("get", "./dowload?xValuse=0", true);
+				console.log('异步加载网页开始:');
+				//xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhr.onreadystatechange = function () {
+					var data = xhr.responseText;
+					console.log(data);
+					var d1 = document.getElementById("d");
+					d1.innerHTML = data;
+				}
+				xhr.send(null);
+			}
+		}
+	</script>
+
+	<br>
+	<br>
+	<br>
+	<div id="listS"></div>
+	<script>
+		var xhr = null;
+		if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else {
+			xhr = new ActiveXObject('Mcrosoft.XMLHTTP');
+		}
+		xhr.open("get", "./dowload?xValuse=0", true);
+		//向servlet请求网页形式的数据
+		//console.log('异步加载网页开始:');
+		//xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr.onreadystatechange = function () {
+			var data = xhr.responseText;
+			//console.log(data);
+			var d1 = document.getElementById("listS");
+			d1.innerHTML = data;
+		}
+		xhr.send(null);
+	</script>
+
+
+
+</body>
+
+</html>

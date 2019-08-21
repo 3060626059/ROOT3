@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> eclipse 19 06 文件下载站 </title>
+</head>
+
+<body>
+	
+	<br>
+	<a>新下载区域 </a>
+	<br>
+	<span>
+		<div id="listS"></div>
+		<!--异步请求数据,填充进上面的div-->
+		<script>
+			var xrequest = null;
+			if (window.XMLHttpRequest) {
+				xrequest = new XMLHttpRequest();
+			} else {
+				xrequest = new ActiveXObject('Mcrosoft.XMLHTTP');
+			}
+			xrequest.open("get", "./dowload?xValuse=0", true);
+			xrequest.onreadystatechange = function () {
+				var data = xrequest.responseText;
+				var listS = document.getElementById("listS");
+				listS.innerHTML = data;
+			}
+			xrequest.send(null);
+		</script>
+	</span>
+
+</body>
+
+</html>
