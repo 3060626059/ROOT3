@@ -25,7 +25,7 @@ import root.tool.dowloadS;
  * 复制过来的代码比我自己写的还多
  * 不好翻译,不过这个下载功能算是完善了
  */
-@WebServlet("/dowload")
+@WebServlet(name = "dowload",urlPatterns = {"/dowload","/dow"})
 public class dowload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**
@@ -78,6 +78,12 @@ public class dowload extends HttpServlet {
 		// 仅需要用 ./dowload?xDowload=
 		// 最终模板 <br><a href="./dowload?xDowload=">名字</a><br><br>
 		// 由于是不同的servlet一起协同,所以需要 当前环境 ./  + servlet 才能正确访问
+		// 修改 在主页中有类型美化脚本,在Java代码中修改调用
+		// 我只是想看看,对未来会造成难维护,会修改
+		// 这种在 java 代码中的 HTML模块,修改很不友好,
+		// 设计一个专门负责 HTML模块的对象,在这个对象中修改较好
+		// 就不会动了不该动的代码
+		
 		
 		StringBuilder x_s=new StringBuilder();
 		Set<String> x_hashMap_keySet = x_hashMap.keySet();

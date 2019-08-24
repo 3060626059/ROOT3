@@ -2,35 +2,38 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title> eclipse 19 06 文件下载站 </title>
+<meta charset="UTF-8">
+<title>eclipse 19 06 文件下载站</title>
+<link rel="stylesheet" href="src/css/style.css">
+
+
 </head>
 
 <body>
-	
 	<br>
 	<a>新下载区域 </a>
 	<br>
 	<span>
-		<div id="listS"></div>
-		<!--异步请求数据,填充进上面的div-->
-		<script>
+		<div id="listS"></div> 
+		<!--异步请求数据,填充进上面的div--> 
+		<script language="JavaScript" type="text/javascript">
 			var xrequest = null;
 			if (window.XMLHttpRequest) {
 				xrequest = new XMLHttpRequest();
+				console.log("");
 			} else {
 				xrequest = new ActiveXObject('Mcrosoft.XMLHTTP');
 			}
 			xrequest.open("get", "./dowload?xValuse=0", true);
-			xrequest.onreadystatechange = function () {
+			xrequest.onreadystatechange = function() {
 				var data = xrequest.responseText;
 				var listS = document.getElementById("listS");
 				listS.innerHTML = data;
-			}
+			}	
 			xrequest.send(null);
 		</script>
 	</span>
-
-</body>
-
+<br>
+<br>
+<br>
 </html>

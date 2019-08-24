@@ -1,0 +1,31 @@
+<div>
+	<span>
+			<form id="x" action="./upload" method="post" enctype="multipart/form-data">
+				<input type="submit" value="上传文件"> <br> 
+					<input type="file" id="file" type="file" onchange="xgetfileName()">
+					<br> 
+					<input type="text" id="filename" value="输入名字">
+			</form> 
+			<script>
+				function xgetfileName() {
+					var x = document.forms["x"]["file"].value;
+					document.forms["x"]["filename"].value = x;
+					// 取出文件框的信息
+					// 赋值给另一个输入框
+
+				}
+				function xexistsfile() {
+					var filename = document.forms["x"]["filename"].value;
+					if (filename.length == 4 || filename === "未选中任何文件!") {
+						// 如果字符串长度是4 说明没有有价值的信息
+						// 提醒!	
+						document.forms["x"]["filename"].value = "未选中任何文件!";
+						return false;
+					} else {
+						return true;
+					}
+				}
+			</script>
+		</span>
+
+</div>
