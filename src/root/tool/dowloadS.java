@@ -37,11 +37,17 @@ import root.tool.xtool;
  */
 public class dowloadS {
 	
+	/**
+	 * 负责传输文件功能
+	 * 
+	 * 
+	 */
 	public dowloadS() {
 		super();
 	}
 	
 	/**
+	 * 将文件复制到输出流完成传输任务
 	 * @param 请求封装对象
 	 * @param 响应封装对象response
 	 * @param 待传输文件
