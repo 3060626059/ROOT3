@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-<meta charset="UTF-8">
-<title>eclipse 19 06 文件下载站</title>
-<link rel="stylesheet" href="src/css/style.css">
+	<head>
+		<meta charset="UTF-8">
+		<title>eclipse 19 06 文件下载站</title>
+		<link rel="stylesheet" href="src/css/style.css">
 
+	</head>
 
-</head>
-
-<body>
-	<br>
-	<a>新下载区域 </a>
-	<br>
-	<span>
+	<body>
+		<br>
+		<a>其它入口</a>
+		<br>
+		<br>
+		<span>
+		<div id="qtrk"></div> 
+		<!--异步请求数据,填充进上面的div--> 
+		<script language="JavaScript" type="text/javascript">
+			var qtrk_xrequest = null;
+			if (window.XMLHttpRequest) {
+				qtrk_xrequest = new XMLHttpRequest();
+			} else {
+				qtrk_xrequest = new ActiveXObject('Mcrosoft.XMLHTTP');
+			}
+			qtrk_xrequest.open("get", "./?x0=1", true);
+			qtrk_xrequest.onreadystatechange = function() {
+				var qtrk_data = qtrk_xrequest.responseText;
+				var qtrkS = document.getElementById("qtrk");
+				qtrkS.innerHTML = qtrk_data;
+			}	
+			qtrk_xrequest.send(null);
+		</script>
+	</span>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<a>新下载区域 </a>
+		<br>
+		<span>
 		<div id="listS"></div> 
 		<!--异步请求数据,填充进上面的div--> 
 		<script language="JavaScript" type="text/javascript">
 			var xrequest = null;
 			if (window.XMLHttpRequest) {
 				xrequest = new XMLHttpRequest();
-				console.log("");
 			} else {
 				xrequest = new ActiveXObject('Mcrosoft.XMLHTTP');
 			}
@@ -33,7 +58,10 @@
 			xrequest.send(null);
 		</script>
 	</span>
-<br>
-<br>
-<br>
+	<br>
+		<br>
+		<br>
+		<br>
+		
+		<h6>(c) Copyright 2019 lenovo. All Rights Reserved. </h6>
 </html>

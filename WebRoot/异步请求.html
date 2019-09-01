@@ -39,6 +39,33 @@
 	<br>
 	<br>
 	<br>
+	<a>异步请求的代码复制后使用时一定要修改id,变量名字</a>
+	<a>变量名字相同浏览器不会重新赋值</a>
+	<a>
+		会造成不生效的问题,不要偷懒
+	</a>
+	
+	<div id="id"></div>
+	<script>
+		var x = null;
+		if (window.XMLHttpRequest) {
+			x = new XMLHttpRequest();
+		} else {
+			x = new ActiveXObject('Mcrosoft.XMLHTTP');
+		}
+		x.open("get", "./dowload?xValuse=0", true);
+		x.onreadystatechange = function () {
+			var d = xhr.responseText;
+			//console.log(data);
+			var d1 = document.getElementById("id");
+			d1.innerHTML = d;
+		}
+		x.send(null);
+	</script>
+
+	
+	
+	
 	<div id="listS"></div>
 	<script>
 		var xhr = null;
