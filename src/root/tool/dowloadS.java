@@ -33,21 +33,15 @@ import root.tool.xtool;
  * 
  * 下载_传输工具,这个类需要引用这个包的另一个类,复制时要修改.
  * 
- *
+ * 复用
  */
 public class dowloadS {
 	
-	/**
-	 * 负责传输文件功能
-	 * 
-	 * 
-	 */
 	public dowloadS() {
 		super();
 	}
 	
 	/**
-	 * 将文件复制到输出流完成传输任务
 	 * @param 请求封装对象
 	 * @param 响应封装对象response
 	 * @param 待传输文件
