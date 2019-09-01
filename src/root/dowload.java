@@ -18,6 +18,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import root.tool.dowloadS;
+import root.tool.xtool;
 
 
 /**
@@ -134,12 +135,21 @@ public class dowload extends HttpServlet {
 		if (x_Parameter.hasMoreElements()) {
 			switch (x_Parameter.nextElement()) {
 				case "xValuse":
-					response.setCharacterEncoding("utf-8");
-					response.setContentType("text/html;charset=utf-8");
-					byte[] xbyte =x_HashMap_to_HTML().toString().getBytes();		
-					response.addHeader("Content-Length", xbyte.length + "");
-					response.getOutputStream().write(xbyte);
-					response.flushBuffer();
+					try {
+						xtool.x_HTML_to_Byte_to_Response(x_HashMap_to_HTML(), response);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				/*
+				 * getbytes 没有指定编码会使用系统的 GBK编码,在浏览器以 UTF-8进行解码
+				 * 会乱码
+				 * response.setCharacterEncoding("utf-8");
+				 * response.setContentType("text/html;charset=utf-8"); byte[] xbyte
+				 * =x_HashMap_to_HTML().toString().getBytes();
+				 * response.addHeader("Content-Length", xbyte.length + "");
+				 * response.getOutputStream().write(xbyte); response.flushBuffer();
+				 */
 				break;
 				
 				case "xDowload":

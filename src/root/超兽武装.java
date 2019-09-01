@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import root.tool.dowloadS;
+import root.tool.xtool;
 
 /**
  * Servlet implementation class 超兽武装
@@ -50,15 +51,22 @@ public class 超兽武装 extends HttpServlet {
 				
 				case "x5":
 					String x_values = request.getParameter("x5");
-					response.setCharacterEncoding("utf-8");
-					response.setContentType("text/html;charset=utf-8");
-					byte[] xbyte = 
-							x_html_index(x_html_video_值_处理(x_values))
-							.toString().
-							getBytes();	
-					response.addHeader("Content-Length", xbyte.length + "");
-					response.getOutputStream().write(xbyte);
-					response.flushBuffer();
+					StringBuilder stringbuilderV = x_html_index(x_html_video_值_处理(x_values));
+					try {
+						xtool.x_HTML_to_Byte_to_Response(stringbuilderV, response);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					
+					
+				/*
+				 * 这段代码会有编码问题
+				 * response.setCharacterEncoding("utf-8");
+				 * response.setContentType("text/html;charset=utf-8"); byte[] xbyte =
+				 * x_html_index(x_html_video_值_处理(x_values)) .toString(). getBytes();
+				 * response.addHeader("Content-Length", xbyte.length + "");
+				 * response.getOutputStream().write(xbyte); response.flushBuffer();
+				 */
 				break;
 				
 				default:
@@ -67,12 +75,20 @@ public class 超兽武装 extends HttpServlet {
 			
 			
 		} else {
-			response.setCharacterEncoding("utf-8");
-			response.setContentType("text/html;charset=utf-8");
-			byte[] xbyte = x_html_index(x_html_video_值_处理("超兽武装之仁者无敌- 1  平行宇宙")).toString().getBytes();	
-			response.addHeader("Content-Length", xbyte.length + "");
-			response.getOutputStream().write(xbyte);
-			response.flushBuffer();
+			 StringBuilder stringbuilder = x_html_index(x_html_video_值_处理("超兽武装之仁者无敌- 1  平行宇宙"));
+			try {
+				xtool.x_HTML_to_Byte_to_Response(stringbuilder, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			/*
+			 * 这段代码有编码问题
+			 * response.setCharacterEncoding("utf-8");
+			 * response.setContentType("text/html;charset=utf-8"); byte[] xbyte =
+			 * x_html_index(x_html_video_值_处理("超兽武装之仁者无敌- 1  平行宇宙")).toString().getBytes();
+			 * response.addHeader("Content-Length", xbyte.length + "");
+			 * response.getOutputStream().write(xbyte); response.flushBuffer();
+			 */
 		}
 		
 		

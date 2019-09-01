@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import root.tool.xtool;
 
 /**
+ * 存在编码不一致问题,未解决!
+ * 
  * Servlet implementation class index 问题 不知道如何解决 / 路径下没办法读取 js ,css 文件 但是 tomcat
  * 404 却能加载 js , css 文件
  */
