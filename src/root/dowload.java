@@ -46,8 +46,6 @@ public class dowload extends HttpServlet {
 		} catch (IOException e) {
 			return null;
 		}
-		System.out.println("000 9098 660");
-		System.out.println(xstr);
 		return JSONObject.parseObject(xstr);
 	}
 	
