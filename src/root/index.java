@@ -14,9 +14,12 @@ import root.tool.xtool;
 
 /**
  * 存在编码不一致问题,未解决!
+ * 2019年9月9日 15:18:44 读取配置文件是设置字符编码utf-8,解决.
  * 
  * Servlet implementation class index 问题 不知道如何解决 / 路径下没办法读取 js ,css 文件 但是 tomcat
  * 404 却能加载 js , css 文件
+ * 在web.xml设置拦截,可加载.
+ * 
  */
 @WebServlet(name = "index", urlPatterns = { "/", "/in", "/index" })
 // 访问路径设置成 / 则无法访问静态资源

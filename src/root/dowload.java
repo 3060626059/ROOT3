@@ -42,10 +42,12 @@ public class dowload extends HttpServlet {
 			byte[] xbyte = new byte[x_index];
 			x_filejson.read(xbyte);
 			x_filejson.close();
-			xstr = new String(xbyte);
+			xstr = new String(xbyte,"UTF-8");
 		} catch (IOException e) {
 			return null;
 		}
+		System.out.println("000 9098 660");
+		System.out.println(xstr);
 		return JSONObject.parseObject(xstr);
 	}
 	
